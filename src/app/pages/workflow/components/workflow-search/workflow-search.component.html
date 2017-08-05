@@ -1,0 +1,35 @@
+<ngb-accordion activeIds="search_condition,search_result">
+  <ngb-panel id="search_condition" title="{{ 'workflow.history.title' | translate }}">
+    <template ngbPanelContent>
+      <div class="input-group mt-3 row">
+       <div class="row mt-2 col-xlg-3 col-xl-3 col-lg-6 col-md-12 col-12">
+        <span class="mt-2 ml-3 mr-2">{{'workflow.history.startTime' | translate}}</span>
+          <input placeholder="yyyy-mm-dd" name="startTime" [formControl]="startTimeAC" ngbDatepicker #d1="ngbDatepicker">
+          <span class="input-group-addon" (click)="d1.toggle()">
+          <img src="../../assets/img/calendar-icon.svg" class="calendar-icon" />
+          </span>
+        </div>
+        <div class="row mt-2 col-xlg-3 col-xl-3 col-lg-6 col-md-12 col-12">
+          <span class="mt-2 mr-2">{{'workflow.history.to' | translate}}</span>
+          <input placeholder="yyyy-mm-dd" name="endTime" [formControl]="endTimeAC" ngbDatepicker #d2="ngbDatepicker">
+          <span class="input-group-addon" (click)="d2.toggle()">
+          <img src="././././assets/img/calendar-icon.svg" class="calendar-icon" />
+          </span>
+        </div>
+        <div class="row mt-2 ml-1 col-xlg-3 col-xl-3 col-lg-6 col-md-12 col-12">
+          <span class="mt-2 mr-2">{{'workflow.common.applicantName' | translate}}</span>
+          <input style="height: 34px;" name="applicant" [formControl]="applicantAC">
+        </div>
+        <div class="row mt-2 col-xlg-3 col-xl-3 col-lg-6 col-md-12 col-12">
+          <button class="btn btn-primary ml-2" (click)="reset()">{{'workflow.history.reset' | translate}}</button>
+          <button class="btn btn-primary ml-2" (click)="search()">{{'workflow.history.search' | translate}}</button>
+        </div>
+      </div>
+    </template>
+  </ngb-panel>
+  <ngb-panel id="search_result" title="{{'workflow.history.searchResult' | translate}}">
+    <template ngbPanelContent>
+      <ng2-smart-table [settings]="settings" [source]="source" (edit)="goDetail($event)"></ng2-smart-table>
+    </template>
+  </ngb-panel>
+</ngb-accordion>

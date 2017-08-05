@@ -1,0 +1,10 @@
+<div class="real-list-container">
+  <ul class="real-list">
+    <li *ngFor="let item of alarmReals" [ngClass]="{checked: item.isChecked, active: item.isActive}"
+        (mouseenter)="item.isActive=true" (mouseleave)="item.isActive=false">
+      <span><div class="alarm-img pull-left" [style.background-image]="'url(/assets/img/' + item.img + ')'"></div></span>
+      <span class="alarm-time">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ item.birthTime }}</span>
+      <span class="alarm-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ item.name }}</span>
+    </li>
+  </ul>
+</div>

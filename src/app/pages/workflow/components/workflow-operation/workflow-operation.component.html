@@ -1,0 +1,10 @@
+<div class="form-control">
+  <div class="input-group">
+    <div class="mr-2">{{ 'workflow.common.currentApproval' | translate }}</div>
+    <label class="mr-5">{{username}}</label>
+    <div class="mr-2">{{ 'workflow.common.delegateTo' | translate }}</div>
+    <input type="text" class="mr-5" [(ngModel)]="userToDelegateTo" [disabled]="disabled" [ngbTypeahead]="searchUser">
+    <div class="mr-2">{{ 'workflow.common.processDelegate' | translate }}</div>
+    <button class="btn btn-primary" (click)="delegateTask()" [disabled]="disabled">{{ 'workflow.common.delegate' | translate }}</button>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<div>
+  <div class="formTitle mb-2">{{ 'workflow.leave.newLeaveRequest' | translate }}</div>
+  <ngb-accordion activeIds="wf_operation,wf_info,wf_form" (panelChange)="beforePanelChange($event)">
+    <ngb-panel id="wf_operation">
+      <template ngbPanelTitle>
+        <div>{{ 'workflow.common.basicOperation' | translate }}&nbsp;
+          <i *ngIf="(wf_operationActive)" class="ion-chevron-up" aria-hidden="true"></i>
+          <i *ngIf="(!wf_operationActive)" class="ion-chevron-down" aria-hidden="true"></i>
+        </div>
+      </template>
+      <template ngbPanelContent>
+        <app-workflow-operation></app-workflow-operation>
+      </template>
+    </ngb-panel>
+    <ngb-panel id="wf_info">
+      <template ngbPanelTitle>
+        <div>{{ 'workflow.common.basicInfo' | translate }}&nbsp;
+          <i *ngIf="(wf_infoActive)" class="ion-chevron-up" aria-hidden="true"></i>
+          <i *ngIf="(!wf_infoActive)" class="ion-chevron-down" aria-hidden="true"></i>
+        </div>
+      </template>
+      <template ngbPanelContent>
+        <app-workflow-basic-info [taskName]="taskName" [applyUserId]="applyUserId" [createTime]="createTime | date:'yyyy-MM-dd HH:mm:ss'"></app-workflow-basic-info>
+      </template>
+    </ngb-panel>
+    <ngb-panel id="wf_form">
+      <template ngbPanelTitle>
+        <div>{{ 'workflow.leave.fillInRequest' | translate }}&nbsp;
+          <i *ngIf="(wf_formActive)" class="ion-chevron-up" aria-hidden="true"></i>
+          <i *ngIf="(!wf_formActive)" class="ion-chevron-down" aria-hidden="true"></i>
+        </div>
+      </template>
+      <template ngbPanelContent>
+        <app-workflow-leave-request [taskId]="taskId" [leaveType]="leaveType" [startTime]="startTime" [endTime]="endTime"
+          [reason]="reason" [controlDisabled]="modifyDisabled"></app-workflow-leave-request>
+      </template>
+    </ngb-panel>
+    <ngb-panel id="wf_managementApproved">
+      <template ngbPanelTitle>
+        <div>{{ 'workflow.leave.managementApproval' | translate }}&nbsp;
+          <i *ngIf="(wf_managementApprovedActive)" class="ion-chevron-up" aria-hidden="true"></i>
+          <i *ngIf="(!wf_managementApprovedActive)" class="ion-chevron-down" aria-hidden="true"></i>
+        </div>
+      </template>
+      <template ngbPanelContent>
+        <app-workflow-approval [approvalName]="managementApproved"></app-workflow-approval>
+      </template>
+    </ngb-panel>
+    <ngb-panel id="wf_hrApproved" class="panel-title">
+      <template ngbPanelTitle>
+        <div>{{ 'workflow.leave.hrApproval' | translate }}&nbsp;
+          <i *ngIf="(wf_hrApprovedActive)" class="ion-chevron-up" aria-hidden="true"></i>
+          <i *ngIf="(!wf_hrApprovedActive)" class="ion-chevron-down" aria-hidden="true"></i>
+        </div>
+      </template>
+      <template ngbPanelContent>
+        <app-workflow-approval [approvalName]="hrApproved"></app-workflow-approval>
+      </template>
+    </ngb-panel>
+    <ngb-panel id="wf_record" class="panel-title">
+      <template ngbPanelTitle>
+        <div>{{ 'workflow.common.approvedRecord' | translate }}&nbsp;
+          <i *ngIf="(wf_recordActive)" class="ion-chevron-up" aria-hidden="true"></i>
+          <i *ngIf="(!wf_recordActive)" class="ion-chevron-down" aria-hidden="true"></i>
+        </div>
+      </template>
+      <template ngbPanelContent>
+        <app-approved-record></app-approved-record>
+      </template>
+    </ngb-panel>
+  </ngb-accordion>
+</div>

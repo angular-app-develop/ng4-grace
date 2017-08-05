@@ -1,0 +1,16 @@
+@import "../../../../../layout/sass/conf/conf";
+
+:host /deep/{
+       $default-background:#73B9FF;
+       .list-group{
+           background-color:white;
+           li{
+               color: black;
+           }
+       }
+
+       li div:hover{
+           background:$default-background//#F7F7F7
+
+       }
+}

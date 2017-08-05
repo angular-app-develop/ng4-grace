@@ -1,0 +1,25 @@
+<div>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="widgets">
+                <div class="card col-md-12">
+                    <div class="card-block form-inline">
+                        <div class="mr-5">{{ '名称' | translate }}：</div>
+                        <label class="mr-5">{{deviceName}}</label>
+                        <div class="mr-5">{{ '位置' | translate }}：</div>
+                        <label class="mr-5">{{devicePath}}</label>
+                        <div class="mr-5">{{ '状态' | translate }}：</div>
+                        <label class="mr-5">{{status}}</label>
+                        <div class="mr-5">{{ '屏蔽状态' | translate }}：</div>
+                        <div (click)='hideClick()'><img [src]='maskStatus' /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <ba-card title="{{ '测点' | translate }}" baCardClass="xmedium-card feed-comply-panel  todo-panel" class="smart-table-container">
+                <ng2-smart-table class="ng2-smart-table" [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)"></ng2-smart-table>
+            </ba-card>
+        </div>
+    </div>
+</div>

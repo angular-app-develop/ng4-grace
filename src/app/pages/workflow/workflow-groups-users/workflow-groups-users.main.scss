@@ -1,0 +1,7 @@
+@import "../../../layout/sass/conf/conf";
+
+:host /deep/{
+    .ngb-title{
+        color: $default-text;
+    }
+}

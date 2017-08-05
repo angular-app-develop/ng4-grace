@@ -1,0 +1,93 @@
+:host /deep/ {
+
+  .formTitle {
+    font-size: 16px;
+    color: #ffffff;
+  }
+
+  .errortip {
+    font-size: 14px;
+    color: #f95372;
+  }
+
+  .calendar-icon {
+    width: 1.2rem;
+    height: 1rem;
+    cursor: pointer;
+  } //override bootstrap
+  .form-control {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #bfdfff;
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .card-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  a {
+    color: #fff;
+  }
+  a:hover {
+    /*color: #73b9ff;*/
+  }
+}
+
+:host /deep/.ng2-smart-table {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-color: #ffffff;
+  line-height: 1.5;
+  color: #ffffff;
+  text-color: #ffffff;
+  border-collapse: collapse;
+  border-spacing: 0;
+  .ng2-smart-pagination {
+    justify-content: center;
+  }
+  display: table;
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+  text-algin: center;
+  a {
+    color: #fff;
+  }
+  input {
+    border-radius: 5px;
+    color: #FFFFFF;
+  }
+  td,
+  th {
+    font-size: .875rem;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    border: 0px solid;
+    color: #ffffff;
+    font-color: #ffffff;
+  }
+  tr:nth-child(2n+1) {
+    /* background-color: #73b9ef;*/
+  }
+  tr:nth-child(2n+2) {
+    background-color: rgba(115, 185, 255, 0.1);
+  }
+  tr:hover {
+    background: rgba(38, 201, 255, 0.6);
+  }
+  tr.selected td {
+    background: rgba(38, 201, 255, 0.6);
+  }
+  .ng2-smart-row {
+    &.selected {
+      /* background-color: rgba(38, 201, 255, 0.6); */
+    }
+    .ng2-smart-actions {
+      &.ng2-smart-action-multiple-select {
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import "../../../../../layout/sass/conf/conf";
+:host /deep/ {
+
+    $fontColor:#bfdfff;
+    $errorColor:#f95372;
+
+    .formTitle {
+        font-size: 16px;
+        color: #ffffff;
+    }
+
+    .errortip {
+        font-size: 14px;
+        color: $errorColor;
+        margin-left: 2px;
+    }
+
+    .calendar-icon {
+        width: 1.2rem;
+        height: 1rem;
+        cursor: pointer;
+    }
+
+    //override bootstrap
+    .form-control {
+        background-color: rgba(255,255,255,0);
+        color:$fontColor;
+        border-color: rgba(0,0,0,0.1);
+    }
+
+    .card-header {
+        border-bottom:1px solid rgba(255,255,255,0.2);
+    }
+
+    a {
+        color: #fff;
+    }
+    a:hover {
+        color:#73b9ff;
+    }
+
+    input, select {
+        background-color: rgba(255,255,255,0);
+        border-color: rgba(0,0,0,0.1);
+        border-width: 1px;
+        color:$fontColor;
+    }
+
+    select > option {
+        // background-color:rgba(255,255,255,0.2);
+        color: black;
+    }
+
+    .input-group-addon {
+        background-color: rgba(255,255,255,0);
+        color: $fontColor;
+    }
+
+    // .input-group-addon:not(:last-child) {
+    //     border-right-width: 1px;
+    // }
+
+}

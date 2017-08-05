@@ -1,0 +1,8 @@
+<div class="row device-status-stat">
+  <div *ngFor="let ds of deviceStatus" class="device-status-stat-item-container center-block col-xlg-3 col-lg-3 col-md-6 col-sm-12 col-12">
+    <div class="device-status-stat-item ">
+      <span class="device-status-stat-item-name">{{ ds.statusName }}</span>
+      <span class="device-status-stat-item-stats">{{ ds.devicecount }}</span>      
+    </div>
+  </div>
+</div>

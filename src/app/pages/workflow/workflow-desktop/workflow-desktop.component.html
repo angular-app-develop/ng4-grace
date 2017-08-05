@@ -1,0 +1,49 @@
+<div>
+    <div class="col-md-12">
+        <div class="row form-inline">
+            <div class="card col-md-2 mr-2 workflowOption">
+                <div class="card-block form-inline workflowEntry">
+                    <div class="imgIcon"><img src="../../../../../assets/img/leave.png" class="processIcon">&nbsp;</div>
+                    <div class="processTitle">{{ 'workflow.common.leaveWorkflow' | translate }}</div>
+                    <div class="floatingBtn">
+                        <button class="btn btn-primary btn-sm" (click)="fillInLeaveRequest()">
+                            <i class="fa fa-plus" aria-hidden="true">&nbsp;{{ 'workflow.common.newWorkflow' | translate }}</i>
+                        </button>&nbsp;
+                        <button class="btn btn-primary btn-sm" (click)="queryLeaveHistory()">
+                            <i class="fa fa-search" aria-hidden="true">&nbsp;{{ 'workflow.common.queryWorkflowHistory' | translate }}</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-md-2 mr-2">
+                <div class="card-block form-inline">
+                    <img src="../../../../../assets/img/alarmWorkOrder.png" class="processIcon">&nbsp;
+                    <div class="processTitle">{{ 'workflow.common.alarmWorkOrder' | translate }}</div>
+                </div>
+            </div>
+            <div class="card col-md-2 mr-2">
+                <div class="card-block form-inline">
+                    <img src="../../../../../assets/img/powerObsolescence.png" class="processIcon">&nbsp;
+                    <div class="processTitle">{{ 'workflow.common.powerObsolescence' | translate }}</div>
+                </div>
+            </div>
+            <div class="card col-md-2 mr-2">
+                <div class="card-block form-inline">
+                    <img src="../../../../../assets/img/assetDelivery.png" class="processIcon">&nbsp;
+                    <div class="processTitle">{{ 'workflow.common.assetDelivery' | translate }}</div>
+                </div>
+            </div>
+            <div class="card col-md-2 mr-2">
+                <div class="card-block form-inline">
+                    <img src="../../../../../assets/img/it.png" class="processIcon">&nbsp;
+                    <div class="processTitle">{{ 'workflow.common.itWorkflow' | translate }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <app-workflow-tasks></app-workflow-tasks>
+        </div>
+    </div>
+
+</div>

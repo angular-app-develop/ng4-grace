@@ -1,0 +1,77 @@
+@import "../../../../layout/sass/conf/conf";
+
+:host /deep/.alarm-level-stat {
+  color: $content-text;
+  padding-left:22px;
+
+  .alarm-level-stat-item-container {
+    position: relative;
+    padding: 0 0 15px;
+    float: left;
+    box-sizing: border-box;
+
+    .card {
+      height: 38px;
+    }
+  }
+
+  @media screen and (min-width: 1325px) {
+    .alarm-level-stat-item-container {
+      max-width: 50%;
+      flex: 0 0 50%
+    }
+  }
+  @media screen and (min-width: 700px) and (max-width: 1325px)  {
+    .alarm-level-stat-item-container{
+      max-width: 50%;
+      flex: 0 0 50%
+    }
+  }
+  @media screen and (max-width: 700px)  {
+    .alarm-level-stat-item-container {
+      max-width: 100%;
+      flex: 0 0 100%
+    }
+  }
+
+  .larm-level-stat-item {
+    position: relative;
+  }
+  @media screen and
+  (min-width: 1325px) and (max-width: 1650px),
+  (min-width: 700px) and (max-width: 830px),
+  (max-width: 400px) {
+    .chart-icon {
+      display: none;
+    }
+  }
+
+  .alarm-info {
+    display: inline-block;
+    padding: 0px 0 0 10px;
+    font-size: 18px;
+    opacity: 0.9;
+    .alarm-info-stats {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      font-size: 20px;
+    }
+    .alarm-info-name{
+      font-size:12px;
+    }
+  }
+  .angular {
+    margin-top: 100px;
+  }
+  .angular .chart {
+    margin-top: 0;
+  }
+  .alarm-img {
+        //border-radius: 50%;
+        margin: 0px 0px 0px 30px;
+        width: 50px;
+        height: 50px;
+        background-size: 100%;
+        //background-image: url($assets-root + $images-root + 'logo.png');
+    }
+}

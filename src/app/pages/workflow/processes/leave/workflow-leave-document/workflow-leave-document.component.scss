@@ -1,0 +1,19 @@
+@import "../../../../../layout/sass/conf/conf";
+:host /deep/ {
+    $fontColor:#bfdfff;
+    //override bootstrap
+    .form-control {
+        background-color: rgba(255,255,255,0);
+        color:$fontColor;
+        border-color: rgba(0,0,0,0.1);
+    }
+    .card-header {
+        border-bottom:1px solid rgba(255,255,255,0.2);
+    }
+    a {
+        color: #fff;
+    }
+    a:hover {
+        color:#73b9ff;
+    }
+}

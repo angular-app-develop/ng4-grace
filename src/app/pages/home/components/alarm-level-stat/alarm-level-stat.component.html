@@ -1,0 +1,11 @@
+<div class="row alarm-level-stat">
+    <div *ngFor="let alarm of alarmLevels" class="alarm-level-stat-item-container col-xlg-3 col-lg-3 col-md-6 col-sm-12 col-12">
+        <div class="alarm-level-stat-item inline-block">
+            <span><div class="alarm-img pull-left" [style.background-image]="'url(/assets/img/' + alarm.icon + ')'"></div></span>
+            <div class="alarm-info">
+                <div class="alarm-info-stats">{{ alarm.value }}</div>
+                <div class="alarm-info-name">{{ alarm.name }}</div>
+            </div>
+        </div>
+    </div>
+</div>

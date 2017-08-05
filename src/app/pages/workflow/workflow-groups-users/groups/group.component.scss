@@ -1,0 +1,41 @@
+@import "../../../../layout/sass/conf/conf";
+
+:host /deep/{
+
+    $default-background:#2c4BA6;
+    $default-hover-color:#0275D8;
+
+    .card{
+        height: 700px;
+    }
+
+    .card-content {
+      padding: 0px 0px 0px 0px;
+    }
+
+
+    li {
+        line-height: 45px;
+        cursor: pointer;
+        list-style: none;
+        text-align: left;
+    }
+
+     li:hover,:active,:visited {
+       background: none repeat  0 0  $default-background;
+       color: $default-text;
+    }
+
+    li div:hover, li.active div, li div:focus ,li div:visited{
+        background: none repeat  0 0  $default-hover-color;
+    }
+
+    .al-title {
+        color: $default-text;
+        font-size: 22px;
+    }
+
+
+
+
+}

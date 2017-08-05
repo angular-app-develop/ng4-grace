@@ -1,0 +1,33 @@
+/* tslint:disable:no-unused-variable */
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+
+import { SeedComponent } from './seed.component';
+
+describe('Component: About', () => {
+  let component: SeedComponent;
+  let fixture: ComponentFixture<SeedComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ SeedComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(SeedComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should display the string "Seed" in h4', () => {
+    const el = fixture.debugElement.query(By.css('h4')).nativeElement;
+    expect(el.textContent).toContain('Seed');
+  });
+
+});

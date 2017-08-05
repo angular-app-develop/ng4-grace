@@ -1,0 +1,18 @@
+<div class="widgets">
+  <div class="row">
+    <ba-card title="{{'workflow.user.cardtitle' | translate }}" baCardClass="xmedium-card feed-comply-panel with-scroll todo-panel" class="smart-table-container">
+      <form class="row form-inline">
+        <div class="input-group col-sm-3">
+          <input type="text" class="form-control" name="searchText"  placeholder="{{'workflow.user.placeholder' | translate }}" [(ngModel)]="searchText" (ngModelChange)="search($event)">
+          <span class="input-group-addon"><i class="ion-ios-search-strong"></i></span> 
+        </div>
+        <div class="btn-container-right col text-right">
+          <button class="btn btn-primary" type="button" (click)="add($event)"><i class="ion-person-add"></i></button>
+        </div>
+        <div class="box-shadow-border mt-2"></div>
+      </form>
+      <ng2-smart-table class="mt-2" [settings]="settings" [(source)]="source" (delete)="delete($event)" (edit)="edit($event)">
+      </ng2-smart-table>
+    </ba-card>
+  </div>
+</div>

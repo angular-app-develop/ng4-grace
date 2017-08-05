@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="card col-6 col-sm-3">
+    <div class="card-header form-inline">
+      <span>组</span>
+      <div class="col text-right">
+        <button class="btn btn-primary" (click)="add()"><i class="ion-plus-round"></i></button>
+      </div>
+    </div>
+
+    <div class="card-body with-scroll">
+      <div class="input-group">
+        <input type="text" [(ngModel)]="searchGroupName" placeholder="{{'workflow.group.groupName' | translate }}" class="form-control">
+        <span class="input-group-addon"><i class="ion-ios-search-strong"></i></span>
+      </div>
+      <div class="card-content">
+        <ul class="list-group mt-2">
+          <li *ngFor="let group of groups | filter:searchGroupName:'name'" (click)="selectGroup(group)">
+            <div class="bootstrap-select">
+              {{group.name}}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card col-xl-8 ml-3">
+    <div class="card-header row form-inline">
+      <span class="group-name">{{currentGroup.name}}</span>
+      <div class="col text-right">
+        <button type="button" class="btn btn-primary" (click)="delete()"><i class="ion-android-delete"></i></button>
+        <button type="button" class="btn btn-primary" (click)="update()"><i class="ion-edit"></i></button>
+      </div>
+    </div>
+    <div class="card-body mt-2">
+      <ng-template #popContent>
+        <add-member-popover-content (refreshMembers)="refreshMembers($event)" (popoverClose)="popoverClose()"></add-member-popover-content>
+      </ng-template>
+      <div>
+        <span class="al-title">{{'workflow.group.membersTitle' | translate }}</span>
+        <span #p="ngbPopover" [ngbPopover]="popContent" placement="bottom" popoverTitle="{{'workflow.user.userId' | translate }}" triggers="manual" (click)="popoverShow()">
+          <i class="ion-person-add"></i>
+        </span>
+      </div>
+      <div class="input-group mt-3">
+        <input type="text" class="form-control col-4" name="searchMemberText" placeholder="{{'workflow.user.userName' | translate }}" [(ngModel)]="searchMemberText" (ngModelChange)="searchMember()">
+        <span class="input-group-addon"><i class="ion-ios-search-strong"></i></span>
+      </div>
+
+      <div class="card-content mt-2">
+        <app-member-list></app-member-list>
+      </div>
+    </div>
+  </div>
+</div>

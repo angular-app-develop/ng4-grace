@@ -1,0 +1,18 @@
+<div class="vertical-scroll">
+  <table class="table table-hover">
+    <tr>
+      <th class="text-center">{{ 'workflow.common.approver' | translate }}</th>
+      <th class="text-center">{{ 'workflow.common.approvedTime' | translate }}</th>
+      <th class="text-center">{{ 'workflow.common.currentNode' | translate }}</th>
+      <th class="text-center">{{ 'workflow.common.approvedResult' | translate }}</th>
+      <th class="text-center">{{ 'workflow.common.remark' | translate }}</th>
+    </tr>
+    <tr *ngFor="let item of approvedRecordArray">
+      <td class="text-center">{{item.claimName}}</td>
+      <td class="text-center">{{item.claimTime}}</td>
+      <td class="text-center">{{item.curPoint}}</td>
+      <td class="text-center">{{item.result}}</td>
+      <td class="text-center">{{item.remark}}</td>
+    </tr>
+  </table>
+</div>

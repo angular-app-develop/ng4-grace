@@ -1,0 +1,92 @@
+@import "../../../../layout/sass/conf/conf";
+
+:host /deep/.real-list-container {
+  ul.real-list {
+    margin: 0;
+    padding: 0;
+    border:0;
+    .placeholder,
+    .ui-sortable-placeholder {}
+    li {
+      margin: 0 0 -1px 0;
+      padding: 12px;
+      list-style: none;
+      position: relative;
+      border: 0px solid $input-border;
+      cursor: grab;
+      height: 42px;
+      i.remove-todo {
+        position: absolute;
+        cursor: pointer;
+        top: 0px;
+        right: 12px;
+        font-size: 32px;
+        transition: color 0.2s;
+        color: rgba($input-border, 0.5);
+        visibility: hidden;
+        line-height: 42px;
+        &:hover {
+          color: $input-border;
+        }
+      }
+      &:hover {
+        i.remove-todo {
+          visibility: visible;
+        }
+      }
+
+      &.checked {
+        .todo-text {
+          color: $content-text;
+        }
+        &:before {
+          background: $input-border !important;
+        }
+      }
+
+      i.mark {
+        display: block;
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        height: 42px;
+        min-width: 4px;
+        background: $input-border;
+        cursor: pointer;
+        transition: min-width 0.3s ease-out;
+      }
+
+      &.active {
+        i.mark {
+          min-width: 40px;
+        }
+        label.todo-checkbox>span {
+          &:before {
+            color: white;
+            content: '\f10c';
+            margin-right: 20px;
+            transition: margin-right 0.1s ease-out;
+            transition-delay: 0.2s;
+            float: none;
+          }
+        }
+        label.todo-checkbox>input:checked+span:before {
+          content: '\f00c';
+        }
+      }
+    }
+  }
+
+
+
+  .alarm-img {
+    //border-radius: 50%;
+    margin: 0px 0px 0px 10px;
+    width: 20px;
+    height: 20px;
+    background-size: 100%; //background-image: url($assets-root + $images-root + 'logo.png');
+  }
+  .alarm-time .alarm-name {
+    margin-left:60px;
+  }
+}

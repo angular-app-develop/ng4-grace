@@ -1,0 +1,7 @@
+@import "../../../../layout/sass/conf/conf";
+
+:host /deep/ {
+  .demo-chart {
+    height: 120px;
+  }
+}

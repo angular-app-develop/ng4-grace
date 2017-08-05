@@ -1,0 +1,72 @@
+@import "../../../../layout/sass/conf/conf";
+
+:host /deep/ {
+  .node {
+    cursor: pointer;
+  }
+
+  .node:hover {
+    stroke: #0f0;
+    stroke-width: 1.5px;
+  }
+
+  .node--leaf {
+    fill: green;
+  }
+  .node--alarm1 {
+    fill: #fa0100;
+  }
+  .node--alarm2 {
+    fill: #f86500;
+  }
+  .node--alarm3 {
+    fill: #fed90f;
+  }
+  .node--alarm4 {
+    fill: #4599f2;
+  }
+  .label {
+    font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-anchor: middle;
+    text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+  }
+
+  .tooltip {
+    position: absolute;
+    width: 120;
+    height: auto;
+  }
+
+  .label,
+  .node--root,
+  .node--leaf {
+    pointer-events: none;
+  }
+
+  .d3-tip {
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+  }
+  /* Creates a small triangle extender for the tooltip */
+  .d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+  }
+  /* Style northward tooltips differently */
+  .d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+  }
+}

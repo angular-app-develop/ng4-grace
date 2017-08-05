@@ -1,0 +1,11 @@
+:host /deep/ {
+
+    $fontColor:#bfdfff;
+
+    input {
+        background-color: rgba(255,255,255,0);
+        border-color: rgba(0,0,0,0.1);
+        border-width: 1px;
+        color: $fontColor;
+    }
+}

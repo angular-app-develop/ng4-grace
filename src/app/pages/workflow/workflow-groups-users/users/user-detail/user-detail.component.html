@@ -1,0 +1,30 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h4 class="modal-title">{{title}}</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group" *ngIf="isAddMode">
+      <label for="userId" class="form-control-label" >{{userId_translate}}</label>
+        <input required name="user.userId" type="text" class="form-control" #userId="ngModel" [(ngModel)]="user.userId" placeholder="{{userId_translate}}">
+      <div *ngIf="!userId.valid" class="text-danger">{{userIdNotEmpty_translate}}</div>
+      </div>
+      <div class="form-group">
+        <label for="userName" class="form-control-label">{{userName_translate}}</label>
+        <input required name="user.userName" type="text" class="form-control" #userName="ngModel" [(ngModel)]="user.userName" placeholder="{{userName_translate}}">
+        <div *ngIf="!userName.valid" class="text-danger">{{userNameNotEmpty_translate}}</div>
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-control-label">{{userEmail_translate}}</label>
+        <input type="text" class="form-control" #email="ngModel" name="email" [(ngModel)]="user.email" placeholder="{{userEmail_translate}}">
+      </div>
+    </form>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">{{cancel_translate}}</button>
+      <button type="button" class="btn btn-primary" (click)="submit()">{{ok_translate}}</button>
+    </div>
+  </div>
+</div>

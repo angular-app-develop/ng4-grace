@@ -1,0 +1,19 @@
+:host /deep/ {
+  .center {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .info-panel {
+    margin-left: 40px;
+  }
+  .copyright {
+    margin-top: 50px;
+  }
+  .appname {
+    //margin-top: -30px;
+    font-size: 56px;
+    height: 70px;
+  }
+}

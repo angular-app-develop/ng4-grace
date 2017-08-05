@@ -1,0 +1,14 @@
+<div class="widgets">
+  <div class="input-group">
+    <input type="text" [(ngModel)]="searchUserText" placeholder="{{'workflow.user.userName' | translate }}" class="form-control" (ngModelChange)="getUsers()">
+    <span class="input-group-addon"><i class="ion-person-add"></i></span>
+  </div>
+
+  <ul  class="list-group mt-2" *ngIf="(users)">
+    <li *ngFor="let user of users | filter:searchUserText:'userName'"  (click)="addMember(user)">
+      <div class="bootstrap-select">
+        {{user.userName}}
+      </div>
+    </li>
+  </ul>
+</div> 

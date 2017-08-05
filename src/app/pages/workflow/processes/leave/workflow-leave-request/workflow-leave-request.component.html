@@ -1,0 +1,57 @@
+<div class="form-control">
+  <div class="input-group mt-3">
+    <div class="col-md-1 pl-0">{{ 'workflow.leave.leaveType' | translate }}</div>
+    <select [disabled]="disabled" [formControl]="leaveTypeAC" [(ngModel)]="selectedLeaveType">
+              <option *ngFor="let _leaveType of leaveTypes" [value]="_leaveType.id">{{_leaveType.leaveTypeName}}</option>
+            </select>
+    <div *ngIf="(!leaveTypeAC.valid && !leaveTypeAC.disabled)" class="ml-2 errortip">{{ 'workflow.leave.leaveTypeNotNull' | translate }}</div>
+  </div>
+
+  <div class="input-group mt-3">
+    <div class="col-md-1 pl-0">{{ 'general.common.startTime' | translate }}</div>
+    <input [disabled]="disabled" [readonly]="disabled" placeholder="yyyy-mm-dd" name="startTime" [formControl]="startTimeAC"
+      ngbDatepicker #d1="ngbDatepicker" [(ngModel)]="leaveStartTime">
+    <button class="input-group-addon" (click)="d1.toggle()" [disabled]="disabled">
+      <i class="fa fa-calendar"></i>
+    </button>
+    <div *ngIf="(!startTimeAC.valid && !startTimeAC.disabled)" class="ml-5 errortip">{{ 'general.common.startTimeNotNull' | translate }}</div>
+  </div>
+
+  <div class="input-group mt-3">
+    <div class="col-md-1 pl-0">{{ 'general.common.endTime' | translate }}</div>
+    <input [readonly]="disabled" [disabled]="disabled" placeholder="yyyy-mm-dd" name="endTime" [formControl]="endTimeAC" ngbDatepicker
+      #d2="ngbDatepicker" [(ngModel)]="leaveEndTime">
+    <button class="input-group-addon" (click)="d2.toggle()" [disabled]="disabled">
+      <i class="fa fa-calendar"></i>
+    </button>
+    <div *ngIf="(!endTimeAC.valid && !endTimeAC.disabled)" class="ml-5 errortip">{{ 'general.common.endTimeNotNull' | translate }}</div>
+  </div>
+
+  <div class="input-group mt-3" *ngIf="(!disabled)">
+    <div class="col-md-1 pl-0">{{ 'workflow.common.attachment' | translate }}</div>
+    <input class="mr-2" name="attachmentDir" #attachmentInput type="file" (change)="fileChange($event)">
+    <button class="btn btn-primary" (click)="deleteAttachment()" [disabled]="processAttachments.length === 0">{{ 'workflow.common.deleteAttachment' | translate }}</button>
+  </div>
+
+  <div class="input-group mt-3" *ngIf="(processAttachments.length > 0)">
+    <div class="col-md-1 pl-0">{{ 'workflow.common.attachmentList' | translate }}</div>
+    <ul *ngFor="let attachment of processAttachments" class="list-group">
+      <li class="list-group-item list-group-item-action mr-5" (click)="downloadFile(attachment)">{{attachment}}
+      </li>
+    </ul>
+  </div>
+
+  <div class="input-group mt-3">
+    <div class="col-md-1 pl-0">{{ 'general.common.reason' | translate }}</div>
+    <textarea name="reason" [readonly]="disabled" [formControl]="reasonAC" class="form-control" [(ngModel)]="leaveReason"></textarea>
+    <div *ngIf="(!reasonAC.valid)" class="ml-2 errortip">{{ 'workflow.leave.leaveReasonValidator' | translate }}</div>
+  </div>
+
+  <div class="input-group mt-3">
+    <div class="col-md-1 pl-0"></div>
+    <button class="btn btn-primary" (click)="startLeave()" [disabled]="disabled">{{ 'general.common.commit' | translate }}</button>
+    <!--<div [visibility]="hidden">-->
+      <button id="rejectBtn" class="btn btn-primary" (click)="rejectLeave()" [disabled]="rejectDisabled">{{ 'general.common.reject' | translate }}</button>
+    <!--</div>-->
+  </div>
+</div>

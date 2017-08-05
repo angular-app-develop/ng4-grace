@@ -1,0 +1,25 @@
+<div class="widgets">
+
+  <div class="row">
+    <div class="col-lg-10 col-md-12">
+      <ngb-tabset type="pills" justify="center">
+        <ngb-tab>
+          <template ngbTabTitle>
+             <div class="ngb-title">{{'workflow.user.title' | translate }}</div>
+          </template>
+          <template ngbTabContent>
+            <app-user-list></app-user-list>
+          </template>
+        </ngb-tab>
+        <ngb-tab>
+          <template ngbTabTitle>
+             <div class="ngb-title">{{'workflow.group.title' | translate }}</div>
+          </template>
+          <template ngbTabContent>
+            <app-group></app-group>
+          </template>
+        </ngb-tab>
+      </ngb-tabset>
+    </div>
+  </div>
+</div>

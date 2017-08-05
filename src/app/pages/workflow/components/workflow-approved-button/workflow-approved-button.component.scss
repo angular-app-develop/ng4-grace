@@ -1,0 +1,21 @@
+@import "../../../../layout/sass/conf/conf";
+:host /deep/ {
+
+$bgUrl: url(../../../../../assets/img/workflow/approval.png) ;
+
+a:hover{text-decoration: none;}
+  .approvedBtn{
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 4px;
+    height:35px;
+    color: #fff;
+    cursor: pointer;
+    font-style: normal;
+  }
+  .approvedBtnBackground span{
+    margin-right: 10px;
+    padding-left: 20px;
+    background: $bgUrl left center no-repeat;
+  }
+ }

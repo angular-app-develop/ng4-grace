@@ -1,0 +1,37 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "baseUrl": "src",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "paths": {
+      "@app/*" : ["app/*"],
+      "@layout/*" : ["app/layout/*"],
+      "@pages/*" : ["app/pages/*"],
+      "@session/*" : ["app/session/*"],
+      "@shared/*" : ["app/shared/*"],
+      "@about/*" : ["app/pages/about/*"],
+      "@alarm/*" : ["app/pages/alarm/*"],
+      "@components/*": ["app/shared/components/*"],
+      "@services/*": ["app/shared/services/*"],
+      "@models/*": ["app/shared/models/*"],
+      "@authorization/*": ["app/shared/authorization/*"],
+      "@home/*" : ["app/pages/home/*"],
+      "@login/*" : ["app/pages/login/*"],
+      "@seed/*" : ["app/pages/seed/*"],
+      "@workflow/*" : ["app/pages/workflow/*"]
+    },
+    "lib": [
+      "es2016",
+      "dom"
+    ]
+  }
+}

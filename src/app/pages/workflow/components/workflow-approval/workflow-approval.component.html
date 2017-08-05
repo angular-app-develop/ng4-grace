@@ -1,0 +1,27 @@
+<div class="form-control">
+  <div class="input-group mt-3">
+    <div class="col-md-1 pl-0">{{ 'workflow.common.approval' | translate }}</div>
+    <input type="radio" class="mr-1" name="{{approvalName}}" [value]="1" [(ngModel)]="approvedOption" [disabled]="disabled">
+    <label class="mr-5">{{ 'workflow.common.agree' | translate }}</label>
+    <input type="radio" class="mr-1" name="{{approvalName}}" [value]="0" [(ngModel)]="approvedOption" [disabled]="disabled">
+    <label class="mr-5">{{ 'workflow.common.disagree' | translate }}</label>
+  </div>
+  <div class="input-group mt-3">
+    <div class="col-md-1 pl-0">{{ 'general.common.comments' | translate }}</div>
+    <textarea name="remarkAC" class="form-control" [formControl]="remarkAC" [readonly]="disabled" [(ngModel)]="remark"></textarea>
+    <div *ngIf="(!remarkAC.valid)" class="ml-2 errortip">{{ 'general.common.maxLength128' | translate }}</div>
+  </div>
+  <div class="input-group mt-3">
+    <div class="col-md-1 pl-0"></div>
+    <button class="btn btn-primary" (click)="completeTask()" [disabled]="disabled">{{ 'general.common.commit' | translate }}</button>
+  </div>
+  <div class="input-group mt-3">
+    <div class="col-md-1 pl-0"></div>
+    <div class="col-md-2 pl-0">{{ 'workflow.common.signature' | translate }}&nbsp;
+      <label>{{approver}}</label>
+    </div>
+    <div>{{ 'general.common.time' | translate }}&nbsp;
+      <label>{{approvedTime | date:'yyyy-MM-dd HH:mm:ss'}}</label>
+    </div>
+  </div>
+</div>
